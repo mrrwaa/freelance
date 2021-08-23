@@ -33,6 +33,8 @@ router.post('/login', async(req, res)=>{
 router.get('/me', auth, async(req,res)=>{
     res.status(200).send({
         apiStatus: true,
+        
+
         date: req.user,
         message: "data featched"
     })
