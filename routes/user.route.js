@@ -2,7 +2,7 @@ const User = require('../app/db/models/user.model')
 const router = require('express').Router()
 const responseCreator = require('../app/helpers/respose.helper')
 const auth = require('../app/middelware/auth')
-
+const upload = require('../app/middelware/upload-file')
 
 router.post('/register', async(req, res)=>{
     try{
@@ -37,6 +37,12 @@ router.get('/me', auth, async(req,res)=>{
         message: "data featched"
     })
 })
+
+router.post('/profile', auth, upload.single('profile'),async (req,res)=>{
+    req.user.image = req.file
+    await req.user.save()
+    res.send('done')
+} )
 
 router.post('/logout', auth, async(req,res)=>{
     try{     
