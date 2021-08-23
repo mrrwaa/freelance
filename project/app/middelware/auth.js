@@ -15,7 +15,7 @@ const auth = async(req,res, next)=>{
         if(!user) throw new Error('please authintcate')
         req.user=user
         req.token = token
-        next()        
+        next();      
     }
     catch(e){
         res.status(500).send({
