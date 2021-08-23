@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
         // validate(value){
         //     if(value.toLowerCase().includes('pass')||value.toLowerCase().includes('password')||value.toLowerCase().includes('123')|| value.toLowerCase().includes(this.name))
         //         throw new Error('week pass')
-        //}
+        // }
      },
     phone:{
         type:String,
@@ -49,6 +49,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:""
     }, 
+    frelancer:{
+        type:Boolean, //0 false , 1 true
+        required:true
+    },
     
     tokens:[
         { token:{type:String}}
