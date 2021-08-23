@@ -39,7 +39,7 @@ router.get('/me', auth, async(req,res)=>{
 })
 
 router.post('/profile', auth, upload.single('profile'),async (req,res)=>{
-    req.user.image = req.file
+    req.user.image = req.file.path
     await req.user.save()
     res.send('done')
 } )
