@@ -20,7 +20,7 @@ const upload = multer({
     limits:{ fileSize: 150000},
     fileFilter: function(req, file, callback){
         ext = path.extname(file.originalname)
-        if(ext!= ".pdf") return callback(new Error('invalid Extension'))
+        if(ext!= ".png") return callback(new Error('invalid Extension'))
         callback(null, true)
     }
 })
