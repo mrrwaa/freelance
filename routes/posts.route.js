@@ -3,12 +3,13 @@ const router = require('express').Router()
 const responseCreator = require('../app/helpers/respose.helper')
 const auth = require('../app/middelware/auth')
 const upload = require('../app/middelware/upload-file')
+const multer = require('multer')
 
 
-router.post('/addpost', auth, upload.single('profile') ,async(req, res)=>{
+router.post('/addpost', auth, upload.single('file') ,async(req, res)=>{
     try{
         const postData = new Post(req.body)
-        console.log(postData)
+        postData.img = req.file.path
         await postData.save()
         const response = responseCreator(true, postData, "data inserted")
         res.status(200).send(response)
