@@ -18,6 +18,28 @@ router.post('/register', async(req, res)=>{
     }
 })
 
+
+    
+router.get('/allUsers', auth, async(req,res)=>{
+    try{
+        const data = await User.find()
+        res.status(200).send({
+            apiStatus:true,
+            data,
+            message:"loading data"
+        })
+
+    }
+    catch(e){
+        res.status(500).send({
+            apiStatus:false,
+            data:e.message,
+            message:"error loading data"
+        })
+    }
+})
+
+
 router.post('/login', async(req, res)=>{
     try{
         const userData = await User.findByCredintials(req.body.email, req.body.password)
