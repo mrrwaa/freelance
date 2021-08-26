@@ -12,6 +12,6 @@ export class UsersService {
     return this._http.get('http://localhost:4000/allUsers')
   }
   registerUser(userData:any):Observable<any>{
-    return this._http.post('http://medical.mind-techs.com/api/auth/signUp', userData)
+    return this._http.post('http://localhost:4000/register', userData)
   }
 }
