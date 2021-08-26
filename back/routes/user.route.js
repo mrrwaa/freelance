@@ -20,15 +20,14 @@ router.post('/register', async(req, res)=>{
 
 
     
-router.get('/allUsers', auth, async(req,res)=>{
+router.get('/allUsers', async(req,res)=>{
     try{
         const data = await User.find()
         res.status(200).send({
-            apiStatus:true,
+            // apiStatus:true,
             data,
-            message:"loading data"
-        })
-
+           message:"loading data" })
+       
     }
     catch(e){
         res.status(500).send({

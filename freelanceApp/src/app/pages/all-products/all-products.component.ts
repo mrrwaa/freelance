@@ -10,7 +10,7 @@ export class AllProductsComponent implements OnInit {
   constructor(private _user:UsersService) { 
 
     _user.getAllData().subscribe( 
-      (data) => {console.log(data); this.allUser = data} ,
+      (data) => {console.log(data); this.allUser = data.data} ,
       ( e ) => { console.log('error'); console.log(e); },
       ( ) => { console.log('then'); }
     )
