@@ -7,7 +7,7 @@ const postSchema = new mongoose.Schema({
     },
     postType:{
         type:String,
-        required:true,
+        // required:true,
         enum:['txt', 'img', 'vid'],
         trim:true
     },

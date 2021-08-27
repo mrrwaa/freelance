@@ -1,28 +1,19 @@
 <section class="my-5 container">
     {{myForm.valid}}
     <form #myForm = "ngForm" (ngSubmit)="handleSubmit(myForm)">
-        <input name="name" class="form-control my-3" required minlength="3" maxlength="10" ngModel #name="ngModel">
-        <!-- <div *ngIf="name.dirty">
-            dirty
-        </div>
-        <div *ngIf="name.touched">touched</div>
-        <div *ngIf="name.invalid">invalid</div>
-        <div *ngIf="name.valid">valid</div> -->
-        <div class="alert alert-danger" *ngIf=" name.invalid &&
-        (myForm.submitted || name.dirty  || name.touched)
-        ">
-            <div *ngIf="name.errors?.required">name is req</div>
-            <div *ngIf="name.errors?.minlength">name is small</div>
-        </div>
-        <input name="email" class="form-control my-3" email ngModel>
-        <div *ngIf="emailFlag">
-            email used before
-        </div>
-        <input name="password" class="form-control my-3" pattern="^[a-zA-Z]+$" ngModel>
-        <input name="phone" class="form-control my-3" ngModel>
-        <input name="gender" class="form-control my-3" ngModel>
-        <input name="role" class="form-control my-3" value="1" ngModel>
-        <button class="btn btn-primary" >add</button>
-        <!-- [disabled]="myForm.invalid" -->
+        <input type="name" name="name" class="form-control my-3" required ngModel #name="ngModel">
+        
+        <input name="email" class="form-control my-3" ngModel>
+        
+        <input type="password" name="password" class="form-control my-3" ngModel>
+        <input type="number" name="phone" class="form-control my-3" ngModel>
+        <input  name="addresses" class="form-control my-3" ngModel>
+        <input type="gender" name="gender" class="form-control my-3" ngModel>
+        <input name="frelancer" class="form-control my-3" ngModel>
+         
+        
+        <button class="btn btn-primary"  >add</button>
+        
+        
     </form>
 </section>

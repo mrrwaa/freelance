@@ -23,12 +23,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         trim:true, 
         required:true,
-        min:6,
-        // match: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/,
-        // validate(value){
-        //     if(value.toLowerCase().includes('pass')||value.toLowerCase().includes('password')||value.toLowerCase().includes('123')|| value.toLowerCase().includes(this.name))
-        //         throw new Error('week pass')
-        // }
+        min:6
      },
     phone:{
         type:String,
