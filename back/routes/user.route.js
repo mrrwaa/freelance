@@ -51,7 +51,7 @@ router.post('/login', async(req, res)=>{
     }
 })
 
-router.get('/me', auth, async(req,res)=>{
+router.get('/user', auth, async(req,res)=>{
     res.status(200).send({
         apiStatus: true,
         
@@ -66,6 +66,8 @@ router.post('/profile', auth, upload.single('profile'),async (req,res)=>{
     await req.user.save()
     res.send('done')
 } )
+
+
 
 router.post('/logout', auth, async(req,res)=>{
     try{     
