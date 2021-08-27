@@ -1,19 +1,81 @@
-<section class="my-5 container">
-    {{myForm.valid}}
-    <form #myForm = "ngForm" (ngSubmit)="handleSubmit(myForm)">
-        <input type="name" name="name" class="form-control my-3" required ngModel #name="ngModel">
-        
-        <input name="email" class="form-control my-3" ngModel>
-        
-        <input type="password" name="password" class="form-control my-3" ngModel>
-        <input type="number" name="phone" class="form-control my-3" ngModel>
-        <input  name="addresses" class="form-control my-3" ngModel>
-        <input type="gender" name="gender" class="form-control my-3" ngModel>
-        <input name="frelancer" class="form-control my-3" ngModel>
-         
-        
-        <button class="btn btn-primary"  >add</button>
-        
-        
-    </form>
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign in</title>
+
+</head>
+<body>
+
+		<div class="container inner-div ">
+			<div class="row">
+
+				<div class="col-lg-5 col-md-5 col-sm-12">
+					<div class="container col1">
+
+					<a href="/">	<img src="https://svgshare.com/i/Wzu.svg" alt="Splash-Screen"  width="120" height="80"></a>
+
+						<div class="form1 ">
+
+						<form #myForm = "ngForm" (ngSubmit)="handleSubmit(myForm)">
+						  <div class="form-group text-left">
+						    <label class="f-label" for="Username">Username</label>
+						    <input type="text" class="form-control f-input" name="name" aria-describedby="emailHelp" #name="ngModel" ngModel>
+						 
+                        </div>
+						   <div class="form-group text-left">
+						    <label class="f-label" for="InputEmail1">Email-address</label>
+						    <input type="email" class="form-control f-input" id="InputEmail1" aria-describedby="emailHelp" placeholder="" name="email" ngModel>
+
+						  </div>
+
+						   <div class="form-group text-left">
+						    <label class="f-label" for="Password1">Password</label>
+						    <input type="password" class="form-control f-input" id="Password1" aria-describedby="emailHelp"  name="password" ngModel>
+
+						  </div>
+						   <div class="form-group text-left">
+						    <label class="f-label" for="Phone">Phone number</label>
+						    <input type="phone" class="form-control f-input" id="Password2" aria-describedby="emailHelp" placeholder="" name="phone" ngModel >
+
+						  </div>
+                          <div class="form-group text-left">
+						    <label class="f-label" for="Phone">Address</label>
+						    <input type="phone" class="form-control f-input" id="Password2" aria-describedby="emailHelp" placeholder="" name="addresses" ngModel >
+
+						  </div>
+                          <div class="form-group text-left">
+						    <label class="f-label" for="Phone">gender</label>
+						    <input type="phone" class="form-control f-input" id="Password2" aria-describedby="emailHelp" placeholder="" name="gender" ngModel >
+
+						  </div>
+                          <div class="form-group text-left">
+						    <label class="f-label" for="Phone">freelance</label>
+						    <input type="phone" class="form-control f-input" id="Password2" aria-describedby="emailHelp" placeholder="" name="freelance" ngModel >
+
+						  </div>
+
+
+
+						  <button type="submit" class="btn btn-primary f-button mt-2" style="width: 90%;background-color: #082640;">Sign Up</button>
+
+						</form>
+						<div style="text-align: center; margin-top: 5px;">
+								<p style="font-size: 10px ">Do you have an account? <span><a href="/login" class="a-link">Sign In</a></span></p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-12">	</div>
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<div class="container col2 mt-4">
+						<img src="https://svgshare.com/i/X2N.svg" width="100%" height="100%">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+</body>
+</html>
+

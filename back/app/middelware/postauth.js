@@ -2,31 +2,31 @@
 
 
 const Post = require('../db/models/posts.model')
-const jwt = require('jsonwebtoken')
-const auth = async(req,res, next)=>{
-    /*
-    1- get authorizstion from header  (Bearer jwt )
-    2- decode {_id:user id}
-    3- search in user 
-    4- if not enta msh auth
-    5- return user
-     */
-    try{
-        const token = req.header('Authorization').replace('Bearer ', '')
-        const decodedToken = jwt.verify(token, process.env.JWTSECURITY)
-        const user = await User.findOne({_id:decodedToken._id, 'tokens.token':token})
-        if(!user) throw new Error('please authintcate')
-        req.user=user
-        req.token = token
-        next();      
-    }
-    catch(e){
-        res.status(500).send({
-            apistatus:false,
-            data:e.message,
-            message:"not authorized"
-        })
-    }
+const auth = require("../middelware/auth")
+ 
+const postauth =async(req,res, next)=>{
+if(auth()){
+      
+    Post.findById(req.params.id,function(err,found){
+      if(err){
+        res.redirect("/")
+      }else{
+        //dose the user own the camprground
+        if(found.author.id.equals(req.user._id)){
+        next()
+        }else{
+          req.flash("error","you dont have permission to do  that")
+          res.redirect("back");
+        }
+      
+      }
+    })
+   }else{
+    req.flash("error","you need to be logged in")
+     res.redirect("back");
+   };
 }
 
-module.exports = auth
+
+
+module.exports = postauth
