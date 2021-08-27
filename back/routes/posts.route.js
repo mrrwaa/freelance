@@ -60,19 +60,28 @@ router.get('/showpost/:id', async(req,res)=>{
         })
     }
 })
-
 router.post('/delete/:id',auth, async(req,res)=>{
     try{
-        // const user_id = req.user._id
-        // const postuser =Post.findById({id:userid})
-        // console.log(postuser)
-        // // if(user_id !== postuser)res.send('can not deleted')
-        const data = await Post.findByIdAndDelete(req.params.id)
-        res.status(200).send({
-            apiStatus:true,
-            data:data,
-            message: "deleted"
-        })
+        const user_id = req.user._id
+        console.log(user_id)
+        
+        id = req.params.id
+        const data = await Post.findById(id)
+        console.log(data.userId)
+        if(user_id == data.userId) {
+            // const dataPost = await Post.findByIdAndDelete(id)
+            // res.status(200).send({
+            //     apiStatus:true,
+            //     data:dataPost,
+            //     message: "deleted"
+            // })
+            res.send('can not deleted');
+        }
+        else{
+            res.send('deleted');
+         
+        }
+       
     }
     catch(e){
         res.status(500).send( responseCreator(false, e.message, "error in delete"))
