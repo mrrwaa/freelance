@@ -17,8 +17,6 @@ router.post('/register', async(req, res)=>{
         res.status(500).send(response)
     }
 })
-
-
     
 router.get('/allUsers', async(req,res)=>{
     try{
@@ -50,7 +48,7 @@ router.post('/login', async(req, res)=>{
         res.status(500).send(response)
     }
 })
-
+//get user data
 router.get('/user', auth, async(req,res)=>{
     res.status(200).send({
         apiStatus: true,
@@ -71,10 +69,13 @@ router.get('/mePosts', auth,  async(req,res)=>{
        
     })
 })
+// gets user profile
 router.post('/profile', auth, upload.single('profile'),async (req,res)=>{
     const userData = new User(req.body)
-    userData.image = req.file.path
-    await userData.save()
+    // userData.image = req.file.path
+    req.user.image = req.file.path
+    await req.user.save()
+    // await userData.save()
     res.send('done')
 } )
 

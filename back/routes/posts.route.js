@@ -5,14 +5,14 @@ const  responseCreator = require('../app/helpers/respose.helper')
 const auth = require('../app/middelware/auth')
 const upload = require('../app/middelware/upload-file')
 
-
-
-router.post('/addpost', auth, upload.single('file') ,async(req, res)=>{
+// creat post
+router.post('/addpost', auth, upload.single('post') ,async(req, res)=>{
     try{
         const postData = new Post({
             ...req.body,
-            userId:req.user._id 
+          userId:req.user._id,
         })
+        if(req.file) postData.file = req.file.path
         
         await postData.save()
         const response = responseCreator(true, postData, "data inserted")
@@ -23,6 +23,7 @@ router.post('/addpost', auth, upload.single('file') ,async(req, res)=>{
         res.status(500).send(response)
     }
 })
+//get all posts 
 router.get('/allPosts', async(req,res)=>{
     try{
         const data = await Post.find()
@@ -40,8 +41,8 @@ router.get('/allPosts', async(req,res)=>{
         })
     }
 })
-
-router.get('/singlepost/:id', async(req,res)=>{
+//show 
+router.get('/showpost/:id', async(req,res)=>{
     const id = req.params.id
     try{
         result = await Post.findById(id)
@@ -58,23 +59,24 @@ router.get('/singlepost/:id', async(req,res)=>{
         })
     }
 })
-router.post('/delete/:id',auth, async(req,res)=>{
-    try{
-        const user_id = req.user._id
-        const post = await Post.find()
-        if(user_id !== req.post.userId) res.send('can not deleted')
-        const data = await Post.findByIdAndDelete(req.params.id)
-        res.status(200).send({
-            apiStatus:true,
-            data:data,
-            message: "deleted"
-        })
-    }
-    catch(e){
-        res.status(500).send( responseCreator(false, e.message, "error in delete"))
-    }
-}
-)
+// router.post('/delete/:id',auth, async(req,res)=>{
+//     try{
+//         const user_id = req.user._id
+//         const postuser =Post.findById({id:userid})
+//         console.log(postuser)
+//         // if(user_id !== postuser)res.send('can not deleted')
+//         const data = await Post.findByIdAndDelete(req.params.id)
+//         res.status(200).send({
+//             apiStatus:true,
+//             data:data,
+//             message: "deleted"
+//         })
+//     }
+//     catch(e){
+//         res.status(500).send( responseCreator(false, e.message, "error in delete"))
+//     }
+// }
+// )
 
 
 module.exports= router
