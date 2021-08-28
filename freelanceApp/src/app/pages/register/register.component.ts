@@ -21,7 +21,7 @@ emailFlag:boolean=false
       if(data.success=="") this.emailFlag=true
       else this._router.navigateByUrl('/profile')
     },
-    (e)=>{},
+    (e)=>{console.log(e.error)},
     ()=>{}
     )
   }

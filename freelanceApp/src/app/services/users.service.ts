@@ -13,5 +13,6 @@ export class UsersService {
   }
   registerUser(userData:any):Observable<any>{
     return this._http.post('http://localhost:4000/register', userData)
+
   }
 }

@@ -3,6 +3,7 @@
 body{
 
 background-size: cover;
+color: #082640;
 }
 
 
@@ -12,7 +13,7 @@ margin-bottom: 5%;
 width: 70% !important;;
 height:100%;
 box-shadow: 0px 10px 20px #00000029;
-background-color: #F6F6F6;
+/* background-color: #F6F6F6; */
 border-radius: 10px;
 }
 
@@ -49,7 +50,7 @@ font-family: 'Roboto', sans-serif;
 text-align: left;
 }
 .f-input{
-color: #FFFFFF;
+/* color: #FFFFFF; */
 box-shadow:  0px 10px 20px #00000029;
 border-radius: 5px !important;
 border: hidden !important;
