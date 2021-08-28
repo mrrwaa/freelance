@@ -15,6 +15,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { Err404Component } from './pages/err404/err404.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { TimelineComponent } from './pages/timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     Err404Component,
     RegisterComponent,
     ProfileComponent,
+    TimelineComponent,
   ],
   imports: [
     BrowserModule,

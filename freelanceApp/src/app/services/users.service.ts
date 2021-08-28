@@ -11,6 +11,10 @@ export class UsersService {
   getAllData():Observable<any>{
     return this._http.get('http://localhost:4000/allUsers')
   }
+  getAllPosts():Observable<any>{
+    return this._http.get('http://localhost:4000/allPosts')
+  }
+
   registerUser(userData:any):Observable<any>{
     return this._http.post('http://localhost:4000/register', userData)
 
