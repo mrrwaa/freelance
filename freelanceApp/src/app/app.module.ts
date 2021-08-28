@@ -15,21 +15,26 @@ import { HeaderComponent } from './shared/header/header.component';
 import { Err404Component } from './pages/err404/err404.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { PostsComponent } from './pages/posts/posts.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SingleProductComponent,
+    TimelineComponent,
     NavbarComponent,
     FooterComponent,
     HeaderComponent,
     Err404Component,
     RegisterComponent,
     ProfileComponent,
-    TimelineComponent,
+    PostsComponent,
+    
+
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -9,7 +9,7 @@ export class UsersService {
   constructor(private _http: HttpClient) { } 
 
   getAllData():Observable<any>{
-    return this._http.get('http://localhost:4000/allUsers')
+    return this._http.get('http://localhost:4000/allPosts')
   }
   getAllPosts():Observable<any>{
     return this._http.get('http://localhost:4000/allPosts')
@@ -19,4 +19,5 @@ export class UsersService {
     return this._http.post('http://localhost:4000/register', userData)
 
   }
+  
 }
