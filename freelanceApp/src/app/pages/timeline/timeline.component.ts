@@ -10,16 +10,13 @@ export class TimelineComponent implements OnInit {
   allPost:any[] = []
   constructor(private _user:UsersService) { 
 
-    _user.getAllPosts().subscribe( 
-      (data) => {console.log(data); this.allPost = data} ,
+    _user. getAllposts().subscribe( 
+      (post) => {console.log(post); this.allPost = post.data} ,
       ( e ) => { console.log('error'); console.log(e); },
       ( ) => { console.log('then'); }
     )
   }
-
   ngOnInit(): void {
   }
-
-
 
 }
