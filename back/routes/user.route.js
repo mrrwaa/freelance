@@ -71,9 +71,7 @@ router.get('/mePosts', auth,  async(req,res)=>{
 })
 // gets user profile
 router.post('/profile', auth, upload.single('profile'),async (req,res)=>{
-    const userData = new User(req.body)
-   
-    // req.user.image = req.file.path
+     req.user.image = req.file.path
     await req.user.save()
     res.send('done');
 } )

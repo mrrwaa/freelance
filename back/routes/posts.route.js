@@ -67,7 +67,7 @@ router.post('/delete/:id',auth, async(req,res)=>{
         console.log(user_id)
         id = req.params.id
 
-        const data = await Post.findById(id)
+        const data = await Post.findAndDelete({_id:id, userId:user_id})
         console.log(data.userId)
 
         if(user_id == data.userId) {
