@@ -23,6 +23,6 @@ export class UsersService {
     return this._http.post(`${this.commonURL}logout`, null)
   }
   me():Observable<any>{
-    return this._http.get(`${this.commonURL}me`)
+    return this._http.get(`${this.commonURL}user`)
   }
 }

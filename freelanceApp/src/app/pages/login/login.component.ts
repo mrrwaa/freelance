@@ -8,7 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginData = {email:"marwaa@gmail.com", password:"23@G9hello"}
+  loginData = {email:"mihi@gmail.com", password:"mrwa@@"}
   constructor(private _data: UsersService) { }
 
   ngOnInit(): void {

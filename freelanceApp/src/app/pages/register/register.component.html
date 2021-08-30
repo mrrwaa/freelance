@@ -34,16 +34,22 @@
 					<input type="phone" class="form-control f-input"  aria-describedby="emailHelp" placeholder="" name="addresses"  ngModel>
 
 				  </div>
-				  <div class="form-group text-left" >
-					<label class="f-label" for="Phone">gender</label>
-					<input type="phone" class="form-control f-input"  aria-describedby="emailHelp" placeholder="" name="gender" ngModel >
-
-				  </div>
-				  <div class="form-group text-left" >
-					<label class="f-label" for="Phone">freelance</label>
-					<input type="phone" class="form-control f-input" aria-describedby="emailHelp" placeholder="" name="frelancer" ngModel >
-
-				  </div>
+				  <label class="f-label" for="Phone">Gender</label>
+				  <div class="col-md-6 col-12">
+					<select class="form-select" name="gender" ngModel>   
+						<option selected disabled>Choose Gender</option>
+						<option value="1">Female</option>
+						<option value="0">Male</option>
+					</select>
+				</div>
+				<label class="f-label" for="Phone">frelancer</label>
+				<div class="col-md-6 col-12">
+				  <select class="form-select" name="gender" ngModel>   
+					  <option selected disabled>Choose</option>
+					  <option value="1">frelancer</option>
+					  <option value="0">customer</option>
+				  </select>
+			  </div>
 
 
 
