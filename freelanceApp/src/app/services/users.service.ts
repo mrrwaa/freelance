@@ -7,14 +7,22 @@ import { Observable } from 'rxjs';
 export class UsersService {
 
   constructor(private _http: HttpClient) { } 
+ 
+  commonURL = "http://localhost:4000/"
 
   getAllposts():Observable<any>{
-    return this._http.get('http://localhost:4000/allPosts')
+    return this._http.get(`${this.commonURL}allPosts`)
+  } 
+  register(userdata:any):Observable<any>{
+    return this._http.post(`${this.commonURL}register`, userdata)
   }
-
-  registerUser(userData:any):Observable<any>{
-    return this._http.post('http://localhost:4000/register', userData)
-
+  login(data:any):Observable<any>{
+    return this._http.post(`${this.commonURL}login`, data)
   }
-  
+  logout():Observable<any>{
+    return this._http.post(`${this.commonURL}logout`, null)
+  }
+  me():Observable<any>{
+    return this._http.get(`${this.commonURL}me`)
+  }
 }

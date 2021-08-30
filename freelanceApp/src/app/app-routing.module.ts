@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
+import { UserInterceptor } from './user.interceptor';
 
 
 

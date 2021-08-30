@@ -16,7 +16,7 @@ emailFlag:boolean=false
 
   handleSubmit(myData:any){
     console.log(myData.value)
-    this._user.registerUser(myData.value).subscribe(data=>{
+    this._user.register(myData.value).subscribe(data=>{
       console.log(data)
       if(data.success=="") this.emailFlag=true
       else this._router.navigateByUrl('/')
