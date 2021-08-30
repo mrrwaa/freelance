@@ -17,5 +17,6 @@ export class ProfileComponent implements OnInit {
       this.myData=data
     })
   }
+  
 
 }

@@ -26,7 +26,7 @@
 				  </div>
 				   <div class="form-group text-left" >
 					<label class="f-label" for="Phone">Phone number</label>
-					<input  name="phone" class="form-control f-input"  aria-describedby="emailHelp"  >
+					<input  name="phone" class="form-control f-input"  aria-describedby="emailHelp" ngModel >
 
 				  </div>
 				  <div class="form-group text-left" >
@@ -42,14 +42,13 @@
 						<option value="0">Male</option>
 					</select>
 				</div>
-				<label class="f-label" for="Phone">frelancer</label>
-				<div class="col-md-6 col-12">
-				  <select class="form-select" name="gender" ngModel>   
-					  <option selected disabled>Choose</option>
-					  <option value="1">frelancer</option>
-					  <option value="0">customer</option>
-				  </select>
-			  </div>
+				<div class="form-group text-left" >
+					<label class="f-label" for="Phone">Job</label>
+					<input type="phone" class="form-control f-input"  aria-describedby="emailHelp" placeholder="" name="job"  ngModel>
+
+				  </div>
+				
+			 
 
 
 

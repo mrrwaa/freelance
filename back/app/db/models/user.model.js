@@ -44,8 +44,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:""
     }, 
-    frelancer:{
-        type:Boolean, //0 false , 1 true
+    job:{
+        type:String, 
+        trim:true,
         required:true
     },
     links:{
