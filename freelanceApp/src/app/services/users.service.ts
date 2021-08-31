@@ -16,6 +16,9 @@ export class UsersService {
   register(userdata:any):Observable<any>{
     return this._http.post(`${this.commonURL}register`, userdata)
   }
+  addPost(userdata:any):Observable<any>{
+    return this._http.post(`${this.commonURL}addpost`, userdata)
+  }
   login(data:any):Observable<any>{
     return this._http.post(`${this.commonURL}login`, data)
   }

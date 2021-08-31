@@ -59,7 +59,7 @@ router.get('/user', auth, async(req,res)=>{
 
 
 
-router.get('/mePosts', auth,  async(req,res)=>{
+router.get('/myPosts', auth,  async(req,res)=>{
     const data = await Post.find({userId: req.user._id})
     console.log(data)
     res.status(200).send({

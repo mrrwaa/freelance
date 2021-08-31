@@ -13,7 +13,7 @@ emailFlag:boolean=false
 
   ngOnInit(): void {
   }
-
+  
   handleSubmit(myData:any){
     console.log(myData.value)
     this._user.register(myData.value).subscribe(data=>{
@@ -25,4 +25,5 @@ emailFlag:boolean=false
     ()=>{}
     )
   }
+  
 }

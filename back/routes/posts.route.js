@@ -4,7 +4,7 @@ const router = require('express').Router()
 const  responseCreator = require('../app/helpers/respose.helper')
 const auth = require('../app/middelware/auth')
 const upload = require('../app/middelware/upload-file')
-const postauth = require("../app/middelware/postauth")
+
 
 // creat post
 router.post('/addpost', auth, upload.single('post') ,async(req, res)=>{
@@ -13,6 +13,7 @@ router.post('/addpost', auth, upload.single('post') ,async(req, res)=>{
             ...req.body,
           userId:req.user._id,
         })
+        console.log(postData)
         if(req.file) postData.file = req.file.path
         
         await postData.save()

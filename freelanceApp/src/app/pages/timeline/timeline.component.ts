@@ -8,6 +8,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class TimelineComponent implements OnInit {
 
   allPost:any[] = []
+  myData:any
   constructor(private _user:UsersService) { 
 
     _user.getAllposts().subscribe( 
@@ -15,8 +16,13 @@ export class TimelineComponent implements OnInit {
       ( e ) => { console.log('error'); console.log(e); },
       ( ) => { console.log('then'); }
     )
-  }
+
+   
+  } 
+  
+ 
   ngOnInit(): void {
   }
+ 
 
 }
