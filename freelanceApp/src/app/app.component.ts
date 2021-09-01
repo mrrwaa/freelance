@@ -7,17 +7,17 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class AppComponent {
   title = 'session15';
-  file:any
+  // file:any
   constructor(private _user:UsersService){}
-  Handelupload(event:any){
-   this.file=event?.target.files[0]
-   console.log(this.file)
-  };
-  uploadfile(){
- const mydata =new FormData ()
- mydata.append ('files',this.file.name)
- this._user.upload(mydata).subscribe(result=>console.log(result))
+  // Handelupload(event:any){
+  //  this.file=event?.target.files[0]
+  //  console.log(this.file)
+  // };
+//   uploadfile(){
+//  const mydata =new FormData ()
+//  mydata.append ('files',this.file.name)
+//  this._user.upload(mydata).subscribe(result=>console.log(result))
 
-  }
+//   }
 
 }
