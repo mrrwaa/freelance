@@ -63,38 +63,6 @@ router.get('/showpost/:id', async(req,res)=>{
 })
 
 
-// router.post('/edite/:id' ,auth, async(req,res) =>{
-//     try{
-//         id = req.params.id
-//         const user_id = req.user._id
-//         const data = await Post.findById(id)
-//         console.log(user_id)
-//         console.log(data.userId)
-//         console.log(user_id === data.userId)
-//         if(user_id === data.userId){
-//             const post = await Post.findByIdAndUpdate(id, req.body, {new:true, runValidators:true})
-//             res.status(200).send({
-//                 apiStatus:true,
-//                 data:post,
-//                 message:"updated"
-//             })
-//             res.send('done')
-            
-//         }
-//         else{
-//             res.send('can not updated')
-           
-//         }
-      
-//     }
-//     catch(e){
-//         res.status(500).send({
-//             apiStatus:false,
-//             data:e.message,
-//             message: "error in edit"
-//         })
-//     }
-// })
 router.post('/edite/:id' , async(req,res) =>{
     try{
             const post = await Post.findByIdAndUpdate(req.params.id, req.body)
@@ -110,6 +78,21 @@ router.post('/edite/:id' , async(req,res) =>{
             data:e.message,
             message: "error in edit"
         })
+    }
+})
+router.post('/delete/:id',auth, async(req,res)=>{
+    try{
+        const user_id = req.user._id
+        id = req.params.id
+        const data = await Post.findAndDelete({_id:id, userId:user_id})
+            res.status(200).send({
+                apiStatus:true,
+                data:dataPost,
+                message: "deleted"
+            })
+        }
+    catch(e){
+        res.status(500).send( responseCreator(false, e.message, "error in delete"))
     }
 })
 

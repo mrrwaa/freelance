@@ -5,7 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
-import { PostComponent } from './post/post.component';
+
 
 
 
@@ -15,7 +15,6 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"register", component:RegisterComponent},
   {path:"profile", component:ProfileComponent},
-  {path:"post", component:PostComponent},
   {path:'**', component:Err404Component},
 ];
 
