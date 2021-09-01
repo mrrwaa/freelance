@@ -18,6 +18,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserInterceptor } from './user.interceptor';
+import { PostComponent } from './post/post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 
@@ -33,7 +37,8 @@ import { UserInterceptor } from './user.interceptor';
     RegisterComponent,
     ProfileComponent,
     TimelineComponent,
-    LoginComponent
+    LoginComponent,
+    PostComponent
     
 
   ],
@@ -42,7 +47,8 @@ import { UserInterceptor } from './user.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

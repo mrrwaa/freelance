@@ -28,4 +28,7 @@ export class UsersService {
   me():Observable<any>{
     return this._http.get(`${this.commonURL}user`)
   }
+  upload(data:any):Observable<any>{
+    return this._http.post(`${this.commonURL}addpost`,data)
+  }
 }
